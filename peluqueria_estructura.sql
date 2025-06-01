@@ -74,4 +74,5 @@ ALTER TABLE usuario
   ADD COLUMN rol VARCHAR(10) NOT NULL;
   
 INSERT INTO usuario (username, password, rol)
+    -- Contraseña:admin123
 VALUES ('admin', '$2a$10$A4aB7J0giknEz8/qQItiH.4996OxKjcwQf7seXCX49pLPeKOdq73O', 'ADMIN');
