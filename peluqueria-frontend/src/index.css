@@ -1,0 +1,182 @@
+:root {
+  --color-light: #F2F2F2;
+  /* Color más claro (fondo general) */
+  --color-secondary: #EAE4D5;
+  /* Tonos medios (secundario) */
+  --color-primary: #B6B09F;
+  /* Color principal */
+  --color-accent: #000000;
+  /* Color oscuro / acento */
+}
+
+/* Opcional: forzar que body ocupe el 100% y tenga el fondo claro */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-light);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* ===========================
+  Navbar personalizado
+  =========================== */
+.navbar-custom {
+  background-color: var(--color-accent) !important;
+  /* Aseguramos que la barra tenga texto claro */
+}
+
+.navbar-custom .nav-link,
+.navbar-custom .navbar-brand {
+  color: var(--color-light) !important;
+}
+
+.navbar-custom .nav-link.active {
+  background-color: var(--color-primary) !important;
+  color: var(--color-light) !important;
+}
+
+.navbar-custom .nav-link:hover {
+  background-color: var(--color-primary) !important;
+  color: var(--color-light) !important;
+}
+
+.navbar-custom .btn-outline-light {
+  border-color: var(--color-light);
+  color: var(--color-light);
+}
+
+.navbar-custom .btn-outline-light:hover {
+  background-color: var(--color-light);
+  color: var(--color-accent);
+}
+
+/* ===========================
+   Botones primarios y secundarios
+   =========================== */
+
+/* Botón primario: fondo principal, texto claro */
+.btn-primary-custom {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-light);
+}
+
+.btn-primary-custom:hover,
+.btn-primary-custom:focus {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-light);
+}
+
+/* Botón secundario: fondo secundario, texto oscuro */
+.btn-secondary-custom {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  color: var(--color-accent);
+}
+
+.btn-secondary-custom:hover,
+.btn-secondary-custom:focus {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-light);
+}
+
+
+/* ===========================
+  Tablas personalizadas
+  =========================== */
+
+/* Cabecera de tabla */
+.table thead th {
+  background-color: var(--color-primary);
+  color: var(--color-light);
+  border-color: var(--color-light);
+}
+
+/* Filas impares con fondo suave */
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: var(--color-light);
+}
+
+/* Cuando pases el puntero sobre la fila */
+.table-hover tbody tr:hover {
+  background-color: var(--color-secondary);
+}
+
+/* Bordes generales de la tabla */
+.table {
+  border: 1px solid var(--color-secondary);
+}
+
+
+
+/* ===========================
+  Formularios
+  =========================== */
+
+/* Label destacado en color secundario */
+label {
+  color: var(--color-accent);
+}
+
+/* Inputs y selects: borde por defecto en secundario */
+.form-control,
+.form-select {
+  border: 1px solid var(--color-secondary);
+}
+
+/* Al enfocar el campo (focus), resaltar con color primario */
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 0.2rem rgba(72, 166, 167, 0.25);
+  /* rgba de --color-primary con opacidad */
+}
+
+
+
+/* ===========================
+  Alertas personalizadas
+  =========================== */
+
+/* Alerta de éxito: fondo secundario, texto oscuro */
+.alert-custom-success {
+  background-color: var(--color-secondary);
+  color: var(--color-accent);
+}
+
+/* Alerta de advertencia: fondo primary, texto claro */
+.alert-custom-warning {
+  background-color: var(--color-primary);
+  color: var(--color-light);
+}
+
+/* Alerta de info: fondo light, texto accent */
+.alert-custom-info {
+  background-color: var(--color-light);
+  color: var(--color-accent);
+  border: 1px solid var(--color-secondary);
+}
+
+
+/* ===========================
+  Encabezados
+  =========================== */
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+}
+
+/* Subtítulos (<h5> en formularios) pueden usar secundario */
+h5 {
+  color: var(--color-secondary);
+  margin-bottom: .75rem;
+}
