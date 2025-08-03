@@ -88,7 +88,7 @@ public class FacturaServiceImpl implements FacturaService {
                     Stock salida = new Stock();
                     salida.setProducto(producto);
                     salida.setCantidad(-detalle.getCantidad()); // <— NEGAMOS la cantidad vendida
-                    salida.setFechaIngreso(fechaHoySql.toLocalDate());        // Fecha de hoy (o podrías usar facturaGuardada.getFecha())
+                    salida.setFechaIngreso(fechaHoySql.toLocalDate());
                     stockRepository.save(salida);
                 }
             }

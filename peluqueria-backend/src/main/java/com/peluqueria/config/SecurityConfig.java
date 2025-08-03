@@ -11,7 +11,6 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -30,7 +29,7 @@ public class SecurityConfig {
     @Autowired
     private UsuarioService usuarioService;
 
-    // 1) UserDetailsService para cargar usuario desde BD
+    //UserDetailsService para cargar usuario desde BD
     @Bean
     public UserDetailsService userDetailsService() {
         return username -> {
@@ -38,22 +37,21 @@ public class SecurityConfig {
             if (u == null) {
                 throw new UsernameNotFoundException("Usuario no encontrado: " + username);
             }
-            UserDetails user = User.builder()
+            return User.builder()
                     .username(u.getUsername())
                     .password(u.getPassword())
                     .roles(u.getRol()) // “ADMIN” o “USER”
                     .build();
-            return user;
         };
     }
 
-    // 2) PasswordEncoder (BCrypt)
+    // PasswordEncoder (BCrypt)
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
-    // 3) Configuración CORS (para que el navegador permita llamadas de React en localhost:3000)
+    // Configuración CORS (para que el navegador permita llamadas de React en localhost:3000)
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
@@ -67,7 +65,8 @@ public class SecurityConfig {
         return source;
     }
 
-    // 4) Cadena de filtros de seguridad
+
+    //Cadena de filtros de seguridad
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
@@ -99,7 +98,7 @@ public class SecurityConfig {
         return http.build();
     }
 
-    // 5) Exponer AuthenticationManager (para futuras extensiones, si se requiere)
+    //Exponer AuthenticationManager (para futuras extensiones, si se requiere)
     @Bean
     public AuthenticationManager authManager(HttpSecurity http,
                                              PasswordEncoder passwordEncoder,

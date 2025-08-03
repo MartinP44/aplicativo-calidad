@@ -11,7 +11,6 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/clientes")
-@CrossOrigin(origins = "*") //Para permitir el acceso desde React
 public class ClienteController {
 
     @Autowired

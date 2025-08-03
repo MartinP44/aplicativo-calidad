@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.peluqueria</groupId>
     <artifactId>peluqueria-backend</artifactId>
-    <version>1.0.0</version>
+    <version>0.0.1-SNAPSHOT</version>
     <name>peluqueria-backend</name>
     <description>peluqueria-backend</description>
     <url/>
@@ -27,7 +27,7 @@
         <url/>
     </scm>
     <properties>
-        <java.version>24</java.version>
+        <java.version>17</java.version>
     </properties>
     <dependencies>
         <dependency>
