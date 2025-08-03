@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.peluqueria</groupId>
     <artifactId>peluqueria-backend</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>peluqueria-backend</name>
     <description>peluqueria-backend</description>
     <url/>
